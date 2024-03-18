@@ -1,5 +1,6 @@
 import unittest
-from lab1_lev3_var1 import arr_zigzag_traversed
+
+from ..src.zigzag_traversal import arr_zigzag_traversed
 
 class Lab1Test(unittest.TestCase):
     def test_arr_zigzag_5x5(self):
@@ -42,6 +43,16 @@ class Lab1Test(unittest.TestCase):
         test_columns_length = 1
 
         needed_result = [1]
+        self.assertEqual(arr_zigzag_traversed(test_array, test_rows_length, test_columns_length), needed_result,
+                         "error!")
+
+    def test_arr_zigzag_empty(self):
+        test_array = []
+
+        test_rows_length = 0
+        test_columns_length = 0
+
+        needed_result = []
         self.assertEqual(arr_zigzag_traversed(test_array, test_rows_length, test_columns_length), needed_result,
                          "error!")
 
