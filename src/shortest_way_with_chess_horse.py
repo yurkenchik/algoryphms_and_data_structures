@@ -16,7 +16,7 @@ def is_move_possible(row_coordinate, column_coordinate):
 
 def minimal_number_of_moves(start_position, end_position):
     queue_for_routes = deque([(start_position[0], start_position[1], 0)])
-    visited[start_position[0]][start_position[1]]
+    visited[start_position[0]][start_position[1]] = True
     while queue_for_routes:
         row_coordinate, column_coordinate, moves = queue_for_routes.popleft()
         if (row_coordinate, column_coordinate) == end_position:
