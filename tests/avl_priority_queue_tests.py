@@ -40,5 +40,14 @@ class TestAvlTreeMethods(unittest.TestCase):
         height_difference = self.tree.height_difference_between_left_and_right_subtrees(node)
         self.assertEqual(height_difference, 0)
 
+    def test_deletion_of_not_existing_node(self):
+        self.tree.root = self.tree.insertion_by_priority(self.tree.root, 3, 1)
+        self.tree.root = self.tree.insertion_by_priority(self.tree.root, 2, 2)
+
+        self.tree.root = self.tree.deletion_by_priority(self.tree.root, 4)
+        expected_result = [3, 2]
+
+        self.assertEqual(self.tree.in_order_traversal(self.tree.root), expected_result)
+
 if __name__ == '__main__':
     unittest.main()
