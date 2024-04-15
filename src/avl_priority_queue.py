@@ -50,7 +50,7 @@ class AvlTree:
     def node_with_minimal_value(self, node):
         current_node = node
 
-        while node.left is not None:
+        while current_node.left is not None:
             current_node = current_node.left
         return current_node
 
@@ -137,3 +137,5 @@ class AvlTree:
         result.append(node.value)
         result.extend(self.in_order_traversal(node.right))
         return result
+
+

@@ -1,6 +1,6 @@
 from collections import deque
 
-with open("sources/input.txt") as file:
+with open("../tests/sources/input.txt") as file:
     N = int(file.readline())
     start_position = tuple(map(int, file.readline().strip().split(", ")))
     end_position = tuple(map(int, file.readline().strip().split(", ")))
@@ -30,7 +30,7 @@ def minimal_number_of_moves(start_position, end_position):
 
     return -1
 
-with open('sources/output.txt', 'w') as file:
+with open('../tests/sources/output.txt', 'w') as file:
     file.write(str(minimal_number_of_moves(start_position, end_position)))
 
 
