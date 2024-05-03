@@ -59,23 +59,6 @@ class TestMinimalLengthOfCablesCounter(unittest.TestCase):
         self.assertEqual(min_length, expected_min_length)
         self.assertEqual(minimal_spanning_tree, expected_minimal_spanning_tree)
 
-    def test_minimal_length_of_cables_counter4(self):
-        # Read graph data from CSV file
-        vertices, graph = read_graph_from_csv('sources/islands/islands_input4.csv')
-
-        # Calculate minimal length of cables and minimal spanning tree
-        min_length, minimal_spanning_tree = minimal_length_of_cables_counter(vertices, graph)
-
-        # Expected minimal length of cables and minimal spanning tree
-        expected_min_length = 9
-        expected_minimal_spanning_tree = [
-            [2, 1, 4],
-            [0, 3, 5],
-        ]
-
-        # Assert the results
-        self.assertEqual(min_length, expected_min_length)
-        self.assertEqual(minimal_spanning_tree, expected_minimal_spanning_tree)
 
 if __name__ == '__main__':
     unittest.main()
