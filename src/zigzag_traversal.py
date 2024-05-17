@@ -66,9 +66,5 @@ def arr_zigzag_traversed(arr, rows_array_lenght, columns_array_lenght):
             row_idx, col_idx = move_left(row_idx, col_idx, rows_array_lenght, columns_array_lenght, arr, result_arr)
             row_idx, col_idx = move_diagonally_down(row_idx, col_idx, rows_array_lenght, columns_array_lenght, arr, result_arr)
 
-test_array = [[1, 2, 3],
-              [4, 5, 6],
-              [7, 8, 9]]
 
-print(arr_zigzag_traversed(test_array, 3, 3))
 

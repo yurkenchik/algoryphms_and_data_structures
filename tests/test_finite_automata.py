@@ -1,5 +1,5 @@
 import unittest
-from ..src.finite_automates import finite_automates_search
+from src.finite_automates import finite_automates_search
 
 class TestFiniteAutomataSearch(unittest.TestCase):
     def test1_pattern_is_found(self):

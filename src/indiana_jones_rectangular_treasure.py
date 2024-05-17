@@ -102,7 +102,7 @@ def indiana_jones_traversal(jumping: List[List[str]],
             memo=memo
         )
 
-    # Зберігання результату в мемоізаційному словнику
+    # тут ми зберігаємо результат в мемозуаційному словнику
     memo[(row_position, column_position)] = total_ways
 
     return total_ways

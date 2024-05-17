@@ -1,6 +1,6 @@
 import unittest
 
-from ..src.avl_priority_queue import AvlTree, AvlTreeNode
+from src.avl_priority_queue import AvlTree, AvlTreeNode
 
 class TestAvlTreeMethods(unittest.TestCase):
 
