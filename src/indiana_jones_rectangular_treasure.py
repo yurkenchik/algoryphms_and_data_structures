@@ -1,4 +1,4 @@
-from typing import List, Tuple
+from typing import List, Tuple, Dict
 
 
 def is_destination(row_position: int, column_position: int, rows: int, cols: int) -> bool:
@@ -23,8 +23,6 @@ def receive_available_ways_to_move_from_current_field(row_position: int,
     """
         Отримує доступні напрямки руху з поточного поля.
 
-        :param row_position: Поточний рядок у матриці.
-        :param column_position: Поточний стовпець у матриці.
         :param matrix: Матриця поля.
         :param cols: Кількість стовпців у матриці.
         :param rows: Кількість рядків у матриці.
@@ -32,19 +30,26 @@ def receive_available_ways_to_move_from_current_field(row_position: int,
     """
 
     current_letter = matrix[row_position][column_position]
-    same_next_letter_positions = []
-    for row in range(rows):
-        for column in range(column_position + 1, cols):
-            if matrix[row][column] == current_letter:
-                same_next_letter_positions.append((row, column))
+    letter_positions: Dict[str, List[Tuple[int, int]]] = {}
 
+    # Пробігаємося по всій матриці і визначаємо координати символів
+    for row in range(rows):
+        for col in range(cols):
+            letter = matrix[row][col]
+            if letter not in letter_positions:
+                letter_positions[letter] = []
+            letter_positions[letter].append((row, col))
+
+    # Отримуємо позиції для поточного символу
+    same_letter_positions = letter_positions.get(current_letter, [])
+
+    # Додаємо сусідню позицію праворуч, якщо вона існує
     if column_position + 1 < cols:
         next_position = (row_position, column_position + 1)
-        if next_position not in same_next_letter_positions:
-            same_next_letter_positions.append(next_position)
+        if next_position not in same_letter_positions:
+            same_letter_positions.append(next_position)
 
-    return same_next_letter_positions
-
+    return same_letter_positions
 
 def indiana_jones_traversal(jumping: List[List[str]], rows: int, cols: int) -> int:
     """
@@ -57,7 +62,9 @@ def indiana_jones_traversal(jumping: List[List[str]], rows: int, cols: int) -> i
     """
 
     dynamic_programming_matrix = [[0 for _ in range(cols)] for _ in range(rows)]
-    dynamic_programming_matrix[0][0] = 1
+
+    for row in range(rows):
+        dynamic_programming_matrix[row][0] = 1
 
     for col in range(cols):
         for row in range(rows):
@@ -67,6 +74,7 @@ def indiana_jones_traversal(jumping: List[List[str]], rows: int, cols: int) -> i
                     dynamic_programming_matrix[next_row][next_col] += dynamic_programming_matrix[row][col]
 
     result = 0
+
     for row in range(rows):
         if is_destination(row, cols - 1, rows, cols):
             result += dynamic_programming_matrix[row][cols - 1]

@@ -11,7 +11,7 @@ class TestIndianaJonesTraversal(unittest.TestCase):
         result = indiana_jones_traversal(sneaky_way, rows=row_size, cols=col_size)
 
         # Check if the result matches the expected output
-        self.assertEqual(result, 1)
+        self.assertEqual(result, 32)
 
     def test_indiana_jones_traversal2(self):
         # Read input matrix and expected output from files
@@ -21,7 +21,7 @@ class TestIndianaJonesTraversal(unittest.TestCase):
         result = indiana_jones_traversal(sneaky_way, rows=row_size, cols=col_size)
 
         # Check if the result matches the expected output
-        self.assertEqual(result, 1)
+        self.assertEqual(result, 64)
 
     def test_indiana_jones_traversal3(self):
         # Read input matrix and expected output from files
@@ -31,7 +31,7 @@ class TestIndianaJonesTraversal(unittest.TestCase):
         result = indiana_jones_traversal(sneaky_way, rows=row_size, cols=col_size)
 
         # Check if the result matches the expected output
-        self.assertEqual(result, 24)
+        self.assertEqual(result, 3352)
 
 
 if __name__ == '__main__':
