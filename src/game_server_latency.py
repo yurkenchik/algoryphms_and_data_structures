@@ -1,4 +1,4 @@
-from algoryphms_and_data_structures.src.avl_priority_queue import *
+from avl_priority_queue import *
 import heapq
 
 def parse_data_from_file(path):

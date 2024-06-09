@@ -1,11 +1,11 @@
 import unittest
 
-from algoryphms_and_data_structures.src.islands import minimal_length_of_cables_counter, read_graph_from_csv
+from src.islands import minimal_length_of_cables_counter, read_graph_from_csv
 
 class TestMinimalLengthOfCablesCounter(unittest.TestCase):
     def test_minimal_length_of_cables_counter(self):
         # Read graph data from CSV file
-        vertices, graph = read_graph_from_csv('sources/islands/islands_input.csv')
+        vertices, graph = read_graph_from_csv('../src/sources/islands_input.csv')
 
         # Calculate minimal length of cables and minimal spanning tree
         min_length, minimal_spanning_tree = minimal_length_of_cables_counter(vertices, graph)
@@ -24,7 +24,7 @@ class TestMinimalLengthOfCablesCounter(unittest.TestCase):
 
     def test_minimal_length_of_cables_counter2(self):
         # Read graph data from CSV file
-        vertices, graph = read_graph_from_csv('sources/islands/islands_input2.csv')
+        vertices, graph = read_graph_from_csv('../src/sources/islands/islands_input2.csv')
 
         # Calculate minimal length of cables and minimal spanning tree
         min_length, minimal_spanning_tree = minimal_length_of_cables_counter(vertices, graph)
@@ -43,7 +43,7 @@ class TestMinimalLengthOfCablesCounter(unittest.TestCase):
 
     def test_minimal_length_of_cables_counter3(self):
         # Read graph data from CSV file
-        vertices, graph = read_graph_from_csv('sources/islands/islands_input3.csv')
+        vertices, graph = read_graph_from_csv('../src/sources/islands/islands_input3.csv')
 
         # Calculate minimal length of cables and minimal spanning tree
         min_length, minimal_spanning_tree = minimal_length_of_cables_counter(vertices, graph)

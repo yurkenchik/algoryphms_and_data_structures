@@ -1,6 +1,6 @@
 import unittest
 
-from ..src.hasmters_lab import max_number_of_hamsters
+from src.hasmters_lab import max_number_of_hamsters
 
 class TestMaxNumberOfHamstersFunction(unittest.TestCase):
 

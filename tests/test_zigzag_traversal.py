@@ -1,6 +1,6 @@
 import unittest
 
-from ..src.zigzag_traversal import arr_zigzag_traversed
+from src.zigzag_traversal import arr_zigzag_traversed
 
 class Lab1Test(unittest.TestCase):
     def test_arr_zigzag_5x5(self):

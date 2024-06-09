@@ -1,6 +1,6 @@
 import unittest
 
-from ..src.find_successor_in_order_traversal import find_successor, BinaryTree, find_bigger_successor
+from src.find_successor_in_order_traversal import find_successor, BinaryTree, find_bigger_successor
 
 class TestInOrderTraversalNext(unittest.TestCase):
 
